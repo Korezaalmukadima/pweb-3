@@ -1,0 +1,100 @@
+/* Custom CSS untuk aplikasi To-Do List */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card-header {
+    border-bottom: none;
+}
+/* Styling untuk item tugas */
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border-left: 5px solid #6c757d;
+}
+.task-item:hover {
+    background-color: #f1f3f5;
+}
+.task-item.completed {
+    border-left: 5px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+.task-text {
+    flex-grow: 1;
+    margin-left: 10px;
+    word-break: break-word;
+}
+/* Animasi untuk menambahkan tugas baru */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.task-item-new {
+    animation: fadeIn 0.5s ease;
+}
+/* Styling untuk tombol aksi */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.btn-task {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+.btn-complete {
+    color: #28a745;
+    border-color: #28a745;
+}
+.btn-complete:hover {
+    background-color: #28a745;
+    color: white;
+}
+.btn-edit {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+.btn-edit:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+.btn-delete {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-delete:hover {
+    background-color: #dc3545;
+    color: white;
+}
+/* Responsvie styling */
+@media (max-width: 576px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 3px;
+    }
+    .task-item {
+        flex-direction: column;
+        align-items: start;
+    }   
+    .task-text {
+        margin: 10px 0;
+        width: 100%;
+    }
+    .action-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
